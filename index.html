@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            .test { width: 100%;margin: 100px auto;}
+        </style>
+        <link rel="stylesheet" href="./src/css/index.css" />
+    </head>
+    <body>
+        <div class="test">
+            
+        </div>
+        <!-- <audio src="/src/test.mp3" preload="auto" autoplay="true"></audio> -->
+    </body>
+</html>
+<script type="text/javascript" src="./src/js/jquery.js"></script>
+<script type="text/javascript" src="./src/js/audio.js"></script>
+<script type="text/javascript">
+// (function () {
+//     var audio = document.createElement('audio');
+//     console.log(222);
+//     audio.src = '/src/test.mp3';
+// })();
+
+(function () {
+    audio({
+        mainWrap : 'div.test',
+        audioUrl : '/src/test.mp3'
+    });
+})();
+// (function () {
+//     var a = document.createElement('audio');
+//     a.addEventListener('play',function(){console.log('play',arguments)});
+//     a.addEventListener('progress',function(){console.log('progress',arguments)});
+//     a.addEventListener('timeupdate',function(){console.log('timeupdate',arguments)});
+//     a.src='http://kolber.github.io/audiojs/demos/mp3/juicy.mp3';
+//     // a.play();
+// })();
+</script>

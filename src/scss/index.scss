@@ -1,0 +1,179 @@
+@charset "UTF-8";
+@import "./core/_setting";
+@import "./core/_css3";
+@import "./core/_mixin";
+@import "./core/_reset";
+@import "./core/_media_queries";
+$paddLR:20; //20px
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?r7pktb');
+    src:    url('../fonts/icomoon.eot?r7pktb#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?r7pktb') format('truetype'),
+        url('../fonts/icomoon.woff?r7pktb') format('woff'),
+        url('../fonts/icomoon.svg?r7pktb#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+}
+button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    &:focus {
+        outline: none;
+    }
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    content: '.';
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+.audio-wrap {
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    height: pte(90,40);
+    font-size: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));
+    background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);
+    -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+.audio-control-wrap {
+    width: pte(90,40);
+    height: pte(90,40);
+    text-align: center;
+    line-height: pte(90,40);
+    border: none;
+    border-right: 1px solid $black;
+    background: none;
+    span:before {
+        font-family: 'icomoon' !important;
+        font-size: pte(45,40);
+        color: #e1e1e1;
+        text-shadow: 0 0 8px #14c1fd;
+    }
+}
+.audio-play-btn{
+    span:before {
+        content: "\e900";
+    }
+}
+.audio-pause-btn {
+    display: none;
+    span:before {
+        content: "\e901";
+    }
+}
+.audio-progress-wrap {
+    width: 45%;
+    height: pte(2,40);
+    background-color: #e1e1e1;
+    position: relative;
+    margin: pte(44,40) pte(20,40) 0 pte(30,40);
+}
+
+.audio-progress {
+    width: 0;
+    height: 2px;
+    background-color: #14c1fd;
+}
+.audio-progress-btn {
+    display: block;
+    width: pte(12,40);
+    height: pte(12,40);
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    position: absolute;
+    top: pte(-5,40);
+    left: 0;
+    box-shadow: 0 0 8px #14c1fd;
+}
+.audio-time-txt {
+    line-height: pte(90,40);
+    p {
+        font-size: pte(20,40);
+        color: #e1e1e1;
+    }
+}
+
+.audio-voice-wrap {
+    width: pte(90,40);
+    height: pte(90,40);
+    text-align: center;
+    line-height: pte(90,40);
+    border: none;
+    border-left: 1px solid $black;
+    background: none;
+    position: relative;
+    span:before {
+        display: block;
+        font-family: 'icomoon' !important;
+        font-size: pte(45,40);
+        color: #e1e1e1;
+        text-shadow: 0 0 8px #14c1fd;
+    }
+}
+.audio-volume-btn1:before {
+    content: "\e90a";
+}
+.audio-volume-btn2:before {
+    content: "\e90b";
+    display: none;
+}
+.audio-volume-btn3:before {
+    content: "\e90c";
+    display: none;
+}
+.audio-volume-btn4:before {
+    content: "\e90e";
+    display: none;
+}
+// .audio-volume-btn5:before {
+//     content: "\e90e";
+//     display: none;
+// }
+
+
+@include max-screen(750px){
+    .audio-wrap { 
+        font-size: 40px;
+    }
+}
+@include max-screen(640px){
+    .audio-wrap { 
+        font-size: 32px;
+    }
+}
+@include max-screen(480px){
+    .audio-wrap { 
+        font-size: 24px; 
+    }
+}
+@include max-screen(360px){
+    .audio-wrap { 
+        font-size: 18px; 
+    }
+}
